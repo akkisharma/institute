@@ -5,30 +5,30 @@ application up and running.
 
 Things you may want to follow:
 
-- Ruby version: **2.7.1**
+* Ruby version: **2.7.1**
 
-- Rails version: **6.0.3**
+* Rails version: **6.0.3**
 
-- System dependencies
-  move to project dir
-  install rails, bundler
+* System dependencies
+  * move to project dir
+  * install rails, bundler
   **run** `bundle install`
 
-- Database creation
-  **Creation** `rake db:create`
-  **Migration** `rake db:migrate`
-  **Seed** `rake db:seed`
+* Database creation
+  * **Creation** `rake db:create`
+  * **Migration** `rake db:migrate`
+  * **Seed** `rake db:seed`
 
-- How to run the test suite
-  **run** `rake db:create RAILS_ENV=test`
-  **run** `rspec`
+* How to run the test suite
+  * **run** `rake db:create RAILS_ENV=test`
+  * **run** `rspec`
 
-- Run App:
-  after setup **run** `rails server`
-  open localhost:3000 to see courses list
-  open links Course List and Tutors List to perform CURD
+* Run App:
+  * after setup **run** `rails server`
+  * open localhost:3000 to see courses list
+  * open links Course List and Tutors List to perform CURD
 
-- API details:
+* API details:
   **Create course**
   Method: POST
   URL: localhost:3000/api/v1/courses
@@ -149,5 +149,3 @@ Things you may want to follow:
     "status": "ok"
   }
   ```
-
-- ...
