@@ -1,0 +1,47 @@
+<%= form_with(model: tutor, local: true) do |form| %>
+  <% if tutor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+      <ul>
+        <% tutor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.collection_select :course_id, courses, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile %>
+    <%= form.text_field :mobile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doj %>
+    <%= form.date_select :doj %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

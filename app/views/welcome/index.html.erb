@@ -1,0 +1,34 @@
+<h2> Welcome to Institute</h2>
+
+<h3> Here are all courses, </h3>
+
+<table>
+  <% if @courses_with_tutors.present? %>
+    <tr>
+      <th>Course Name</th>
+      <th>Course Credit</th>
+      <th>Months Duration</th>
+      <th>Tutor Name</th>
+      <th>Tutor Email</th>
+      <th>Tutor Mobile</th>
+      <th>Tutor date of joining</th>
+    </tr>
+    <% @courses_with_tutors.each do |course| %>
+      <tr>
+        <td><%= course.course_name %></td>
+        <td><%= course.credits %></td>
+        <td><%= course.months_duration %></td>
+        <td><%= course.first_name.present? ? (course.first_name + ' ' + course.last_name) : '' %></td>
+        <td><%= course.email || '' %></td>
+        <td><%= course.mobile || '' %></td>
+        <td><%= course.doj&.to_time&.strftime("%e-%m-%Y") || '' %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr><td> No Courses available </td><tr>
+  <% end %>
+</table>
+
+<br />
+<%= link_to 'Courses List', courses_path %> |
+<%= link_to 'Toutors List', tutors_path %>
